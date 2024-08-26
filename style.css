@@ -7,24 +7,11 @@ a {
     color: inherit;
 }
 
-@font-face {
-    font-family: 'stix_two_text';
-    src: url('./fonts/stixtwotext-regular-webfont.woff2') format('woff2'),
-        url('./fonts/stixtwotext-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'stix_two_text';
-    src: url('./fonts/stixtwotext-italic-webfont.woff2') format('woff2'),
-        url('./fonts/stixtwotext-italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
 html {
-    font-family: 'stix_two_text';
+    background: rgb(37, 34, 29);
+    color: rgb(255, 247, 205);
+    font-family: serif;
+    font-style: italic;
     font-size: 15px;
     line-height: 1.3;
     width: 100%;
@@ -36,7 +23,7 @@ body {
 }
 
 main {
-    margin: 4em auto;
+    margin: 4em;
     max-width: 67ch;
     position: relative;
     margin-bottom: 200px;
