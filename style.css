@@ -8,8 +8,8 @@ a {
 }
 
 html {
-    background: rgb(37, 34, 29);
-    color: rgb(255, 247, 205);
+    background: rgb(233, 233, 233);
+    color: rgb(0, 0, 0);
     font-family: serif;
     font-style: italic;
     font-size: 15px;
@@ -22,12 +22,9 @@ body {
     width: 100%;
 }
 
-main {
-    margin: 4em;
-    max-width: 67ch;
+main { 
     position: relative;
     margin-bottom: 200px;
-    padding: 16px;
     width: 100%;
 }
 
@@ -134,4 +131,50 @@ li small {
 
 strong {
     font-weight: 700;
+}
+
+header.loco {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 1.5em;
+    overflow: hidden;
+    margin-left: -2em;
+    margin-right: -2em;
+}
+
+.loco pre {
+    display: inline-block;
+}
+
+.loco .motive {
+    display: inline-block;
+    font-size: 3em;
+    transform: scaleX(-1);
+}
+
+.loco .zero, .loco .one {
+    width: 1.3em;
+    text-align: center;
+}
+.loco .zero {
+    color: white;
+    display: inline-block;
+    border: 2px solid black;
+    background: black;
+}
+
+.loco .one {
+    color: black;
+    display: inline-block;
+    background: white;
+    border: 2px solid black;
+}
+
+.one + .one {
+    border-left: none;
+}
+
+
+.zero + .zero {
+    border-left: none;
 }

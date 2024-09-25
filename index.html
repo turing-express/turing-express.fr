@@ -13,6 +13,41 @@
 
 <body>
     <main>
+        <header class="loco">
+            <pre><span class="ribbon"><span class="zero">0</span><span class="one">1</span></span><span class="motive">🚂</span></pre>
+        </header>
+        <script>
+            (function() {
+                const w = window.innerWidth;
+                const ribbon = document.querySelector('.loco .ribbon');
+                const motive = document.querySelector('.loco .motive');
+                const overflowing = () => ribbon.getBoundingClientRect().right > (w - 80);
+                let t = 200;
+                const make = () => {
+                    const s = document.createElement('span');
+                    if (Math.random() > 0.5) {
+                        s.classList.add('zero');
+                        s.innerHTML = '0';
+                    } else {
+                        s.classList.add('one');
+                        s.innerHTML = '1';
+                    }
+                    return s;
+                }
+                const place = (t) => {
+                    setTimeout(() => {
+                        const el = make();
+                        ribbon.appendChild(el);
+                        if (overflowing()) {
+                            ribbon.removeChild(el);
+                        } else {
+                            place(t + (((Math.random() > 0.5) ? -1 : 1) * Math.random() * 100));
+                        }
+                    }, t);
+                }
+                place(t);
+            })();
+        </script>
         <h1>Turing-Express</h1>
         <p>Le studio de développement indépendant de <a href="https://lucassifoni.info">Lucas Sifoni</a>.<br/>Édite <a href="https://alzo.archi">alzo</a>, base de données et accélérateur de communication pour architectes.</p>
     </main>
