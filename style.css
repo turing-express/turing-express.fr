@@ -89,7 +89,6 @@ header.loco {
 .loco .motive {
     display: inline-block;
     font-size: 1em;
-    transform: skewX(-5deg);
 }
 
 .motive img {
