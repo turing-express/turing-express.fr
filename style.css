@@ -1,25 +1,56 @@
-html * {
-    box-sizing: border-box;
+@font-face {
+    font-family: "Droulers Clarendon";
+    src: url("./fonts/DroulersClarendon-Book.otf") format("opentype");
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-a {
-    color: inherit;
+@font-face {
+    font-family: "Brut Grotesque";
+    src: url("./fonts/Brut_Grotesque-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Brut Grotesque";
+    src: url("./fonts/Brut_Grotesque-Book_Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --paper: #ffffff;
+    --ink: #263a2e;
+    --muted: #565656;
+    --accent: #263a2e;
+    --accent-pale: #eef2ef;
+    --title-font: "Droulers Clarendon", Georgia, "Times New Roman", serif;
+    --body-font: "Brut Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html * {
+    box-sizing: border-box;
 }
 
 html {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-family: sans-serif;
-    font-weight: 300;
-    font-size: 15px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-synthesis: none;
+    font-size: 16px;
     line-height: 1.3;
     width: 100%;
 }
 
 body {
-    overflow-x: hidden;
+    margin: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 
 main {
@@ -27,48 +58,31 @@ main {
     width: 100%;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
+a {
+    color: var(--accent);
+    text-underline-offset: 0.16em;
 }
 
-li::before {
-    content: "– ";
+a:hover {
+    color: var(--ink);
 }
 
-footer {
-    font-style: italic;
+::selection {
+    background: var(--accent);
+    color: var(--paper);
 }
 
-em,
-footer {
-    font-size: 1.05em;
+article {
+    padding: 0 2em 0 1.5em;
 }
 
-p,
-ul,
-h1,
-header {
-    margin-top: 0;
-    margin-bottom: 1em;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 0.75em;
-}
-
-p + ul {
-    margin-top: -1em;
-}
-
-li small {
-    margin-left: em;
-    font-style: italic;
-}
-
-strong {
-    font-weight: 700;
+article h1 {
+    font-family: var(--title-font);
+    font-size: 2.3em;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--accent);
+    margin: 0.9em 0 0;
 }
 
 header.loco {
@@ -76,14 +90,13 @@ header.loco {
     font-style: normal;
     font-size: 1.2em;
     overflow: hidden;
-    margin-left: -2em;
-    margin-right: -2em;
+    margin: 0.6em -2em 0.5em;
     padding: 0;
-    margin-top: -1em;
 }
 
 .loco pre {
     display: inline-block;
+    margin: 0;
 }
 
 .loco .motive {
@@ -95,7 +108,6 @@ header.loco {
     height: 2.5em;
     position: relative;
     top: -0.1em;
-    left: 0em;
 }
 
 .loco .zero,
@@ -114,50 +126,156 @@ header.loco {
 }
 
 .loco .zero {
-    color: white;
-    display: inline-block;
-    border: 2px solid black;
-    background: black;
+    color: var(--paper);
+    background: var(--accent);
+    border: 2px solid var(--accent);
 }
 
 .loco .one {
-    color: black;
-    display: inline-block;
-    background: white;
-    border: 2px solid black;
+    color: var(--accent);
+    background: var(--paper);
+    border: 2px solid var(--accent);
 }
 
-.one + .one {
-    border-left: none;
-}
-
+.one + .one,
 .zero + .zero {
     border-left: none;
 }
 
-article {
-    padding: 0 1em;
-    padding-right: 2em;
-}
-
-article h1 {
-    margin-bottom: 0;
-    margin-top: 1em;
-}
-
-article p {
-    margin-bottom: 2em;
-}
 
 .prose {
-    max-width: 420px;
+    max-width: 560px;
 }
 
-article ul li {
-    margin-bottom: 0.5em;
+.prose p {
+    margin: 0 0 1em;
+}
+
+.prose h2 {
+    font-family: var(--title-font);
+    font-size: 1.32em;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--accent);
+    margin: 2.85em 0 0.55em;
+}
+
+.prose h3 {
+    font-family: var(--title-font);
+    font-size: 1.08em;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 0.25em;
+}
+
+
+article h1,
+.prose h2,
+.prose h3 {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+strong {
+    font-weight: 400;
+    color: var(--accent);
+}
+
+.loco-caption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-bottom: 2.25em;
+}
+
+.lead {
+    font-size: 1.35em;
+    line-height: 1.42;
+}
+
+.missions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mission {
+    margin-bottom: 1.5em;
+}
+
+.mission p {
+    margin-bottom: 0;
+}
+
+.steps {
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+.steps li {
+    margin-bottom: 0.7em;
+    padding-left: 0.2em;
+}
+
+.steps li::marker {
+    color: var(--accent);
+}
+
+.contact {
+    background: var(--accent-pale);
+    padding: 1.5em 1.6em 1.6em;
+    margin-top: 2.85em;
+    margin-bottom: 2.85em;
+}
+
+.contact h2 {
+    margin-top: 0;
+}
+
+.contact-lines {
+    line-height: 2.1;
+    margin-bottom: 0;
+}
+
+.stack {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-top: 4.85em;
 }
 
 footer {
-    padding: 1rem;
-    font-size: 0.87em;
+    max-width: 560px;
+    padding: 2.85em 2em 2.6em 1.5em;
+    font-style: italic;
+    font-size: 0.85em;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+@media (max-width: 480px) {
+    article {
+        padding: 0 1em;
+    }
+
+    header.loco {
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+
+    article h1 {
+        font-size: 2em;
+    }
+
+    .lead {
+        font-size: 1.22em;
+    }
+
+    .contact {
+        padding: 1.3em 1.2em 1.4em;
+    }
+
+    footer {
+        padding: 2.6em 1em;
+    }
 }
