@@ -1,6 +1,14 @@
 @font-face {
     font-family: "Droulers Clarendon";
-    src: url("./fonts/DroulersClarendon-Book.woff2") format("woff2");
+    src: url("./fonts/DroulersClarendon-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Droulers";
+    src: url("./fonts/Droulers-Regular.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -11,14 +19,6 @@
     src: url("./fonts/Brut_Grotesque-Book.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Brut Grotesque";
-    src: url("./fonts/Brut_Grotesque-Book_Italic.woff2") format("woff2");
-    font-weight: 400;
-    font-style: italic;
     font-display: swap;
 }
 
@@ -86,7 +86,7 @@ article h1 {
 }
 
 header.loco {
-    font-family: monospace;
+    font-family: "Droulers", monospace;
     font-style: normal;
     font-size: 1.2em;
     overflow: hidden;
@@ -183,7 +183,6 @@ strong {
 }
 
 .loco-caption {
-    font-style: italic;
     font-size: 0.9em;
     color: var(--muted);
     margin-bottom: 2.25em;
@@ -247,7 +246,6 @@ strong {
 footer {
     max-width: 560px;
     padding: 2.85em 2em 2.6em 1.5em;
-    font-style: italic;
     font-size: 0.85em;
     line-height: 1.55;
     color: var(--muted);
